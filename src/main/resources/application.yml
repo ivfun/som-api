@@ -1,0 +1,8 @@
+server:
+ port: 6000
+ compression:
+   enabled: true
+   mime-types: application/json,application/xml
+   min-response-size: 500
+ servlet:
+   context-path: /v1
