@@ -1,8 +1,8 @@
 package org.ivfun.som.model
 
 class Equipment: EntityModel() {
-    var client: Client? = null
-    var model: Model? = null
-    var serialNumber: String? = ""
-    var description: String? = ""
+    lateinit var client: Client
+    lateinit var model: Model
+    var serialNumber: String = ""
+    var description: String = ""
 }
