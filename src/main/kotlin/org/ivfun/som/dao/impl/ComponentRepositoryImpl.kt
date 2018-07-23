@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 class ComponentRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) : ComponentRepository {
-    private var queryUtils = QueryUtils("COMPONENT", "DESCRIPTION")
+    private var queryUtils = QueryUtils("CDT_COMPONENT", "DESCRIPTION")
 
     override fun add(t: Component) {
         val query = this.queryUtils.getInsertQuery()

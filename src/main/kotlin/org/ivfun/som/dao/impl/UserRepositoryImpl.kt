@@ -7,13 +7,13 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 class UserRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) : UserRepository {
-    private var queryUtils = QueryUtils("USER", "NAME, PASSWORD, EMAIL, TIMEZONE, ACCESS_LEVEL")
+    private var queryUtils = QueryUtils("CDT_USER", "USERNAME, PASSWORD, EMAIL, TIMEZONE, ACCESS_LEVEL")
 
     override fun add(t: User) {
         val query = this.queryUtils.getInsertQuery()
 
         val params = hashMapOf<String, Any>()
-        params["NAME"] = t.name
+        params["USERNAME"] = t.name
         params["PASSWORD"] = t.password
         params["EMAIL"] = t.email
         params["TIMEZONE"] = t.timezone
@@ -41,7 +41,7 @@ class UserRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) :
 
         val params = hashMapOf<String, Any>()
         params["ID"] = t.id
-        params["NAME"] = t.name
+        params["USERNAME"] = t.name
         params["PASSWORD"] = t.password
         params["EMAIL"] = t.email
         params["TIMEZONE"] = t.timezone

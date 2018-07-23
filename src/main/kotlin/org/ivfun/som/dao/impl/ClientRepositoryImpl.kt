@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.stereotype.Repository
 
 class ClientRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) : ClientRepository {
-    private var queryUtils = QueryUtils("CLIENT", "DESCRIPTION")
+    private var queryUtils = QueryUtils("CDT_CLIENT", "DESCRIPTION")
 
     override fun add(t: Client) {
         var query = this.queryUtils.getInsertQuery()

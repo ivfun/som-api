@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 class OrderHistoryRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) : OrderHistoryRepository {
-    private var queryUtils = QueryUtils("ORDER_HISTORY", "ID_ORDER, ID_USER, DT_TM_UTC, STATUS, POSTSCRIPT")
+    private var queryUtils = QueryUtils("CDT_ORDER_HISTORY", "ID_ORDER, ID_USER, DT_TM_UTC, STATUS, POSTSCRIPT")
 
     override fun add(t: OrderHistory) {
         var query = this.queryUtils.getInsertQuery()

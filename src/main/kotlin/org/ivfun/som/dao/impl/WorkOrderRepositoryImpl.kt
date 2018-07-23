@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository
 
 class WorkOrderRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) : WorkOrderRepository {
     private var queryUtils = QueryUtils(
-            "WORK_ORDER",
+            "CDT_WORK_ORDER",
             "ID_ORDER, ID_USER, DT_TM_UTC_START, DT_TM_UTC_END, VL_TIME_IN_SECONDS, POSTSCRIPT"
     )
 

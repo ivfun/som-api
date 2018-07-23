@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.stereotype.Repository
 
 class OrderRepositoryImpl(private var jdbcTemplate: NamedParameterJdbcTemplate) : OrderRepository {
-    private var queryUtils = QueryUtils("ORDER", "ID_EQUIPMENT, DT_TM_UTC_START, DT_TM_UTC_END, NF_NUMBER, STATUS")
+    private var queryUtils = QueryUtils("CDT_ORDER", "ID_EQUIPMENT, DT_TM_UTC_START, DT_TM_UTC_END, NF_NUMBER, STATUS")
 
     override fun add(t: Order) {
         var query = this.queryUtils.getInsertQuery()
